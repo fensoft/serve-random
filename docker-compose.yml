@@ -1,0 +1,11 @@
+services:
+  serve-random:
+    image: fensoft/docker-serve-random:1.0
+    container_name: serve-random
+    restart: unless-stopped
+    environment:
+      - PATTERN=.mp3
+    volumes:
+      - ./data:/data
+    ports:
+      - '8000:8000'
